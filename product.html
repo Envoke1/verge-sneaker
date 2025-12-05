@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF 8" />
+<meta name="viewport" content="width=device-width, initial scale=1.0" />
+<title>Verge Sneaker</title>
+<style>
+body {
+  margin: 0;
+  font family: Arial;
+  background: #fff;
+  animation: fadeUp .5s ease;
+}
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+nav {
+  display: flex;
+  justify content: space-between;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  transition: .2s;
+}
+nav a:hover {opacity: .7;}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+}
+.shoe {
+  width: 320px;
+  height: 320px;
+  background: #ddd;
+  margin: 0 auto 20px;
+  border-radius: 15px;
+  animation: float 3s infinite ease-in-out;
+}
+@keyframes float {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+
+button {
+  padding: 15px 30px;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+}
+button:hover {transform: scale(1.05);}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div>Verge</div>
+<div>
+  <a href="index.html">Home</a>
+  <a href="product.html">Sneaker</a>
+  <a href="checkout.html">Checkout</a>
+</div>
+</nav>
+
+<div class="container">
+  <div class="shoe"></div>
+  <h1>Verge Sneaker</h1>
+  <p>Lightweight. Durable. Designed for your grind.</p>
+  <h2>Price 149</h2>
+  <button onclick="location.href='checkout.html'">Buy Now</button>
+</div>
+
+</body>
+</html>
