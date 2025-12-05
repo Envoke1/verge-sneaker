@@ -1,76 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF 8" />
-<meta name="viewport" content="width=device-width, initial scale=1.0" />
-<title>Verge Sneakers</title>
-<style>
-body {
-  margin: 0;
-  font family: Arial;
-  background: #f7f7f7;
-  color: #111;
-  animation: fadeIn .6s ease;
-}
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-nav {
-  display: flex;
-  justify content: space-between;
-  padding: 20px;
-  background: #111;
-  color: #fff;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 15px;
-  transition: .2s;
-}
-nav a:hover {
-  opacity: .7;
-}
-
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-}
-.hero h1 {
-  font-size: 52px;
-}
-.hero button {
-  padding: 15px 30px;
-  background: #111;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: .2s;
-}
-.hero button:hover {
-  transform: scale(1.05);
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Verge Sneaker – Drop Sale</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <header class="nav">
+    <div class="logo">Verge Sneaker</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
 
-<nav>
-<div>Verge</div>
-<div>
-  <a href="index.html">Home</a>
-  <a href="product.html">Sneaker</a>
-  <a href="checkout.html">Checkout</a>
-</div>
-</nav>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Verge Sneaker</h1>
+      <p>Limited time – 30% off launch drop</p>
+      <a href="shop.html" class="btn">Shop Now</a>
+    </div>
+  </section>
 
-<div class="hero">
-  <h1>The Verge Sneaker</h1>
-  <p>Step into a new dimension of comfort.</p>
-  <button onclick="location.href='product.html'">View Product</button>
-</div>
+  <section class="features">
+    <div class="feature">
+      <h3>Premium Comfort</h3>
+      <p>All-day cushioning & unbeatable support.</p>
+    </div>
+    <div class="feature">
+      <h3>Urban Ready</h3>
+      <p>Street-smart design built for city movement.</p>
+    </div>
+    <div class="feature">
+      <h3>Exclusive Drop</h3>
+      <p>Limited stock — don’t sleep on this.</p>
+    </div>
+  </section>
 
+  <footer class="footer">
+    © 2025 Verge Sneaker Co.
+  </footer>
 </body>
 </html>
