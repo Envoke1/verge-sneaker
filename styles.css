@@ -1,0 +1,79 @@
+:root{
+  --bg:#f6f6f8;
+  --muted:#6b7280;
+  --accent:#111;
+  --cta:#ff3b3b;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; background:var(--bg); color:#111; -webkit-font-smoothing:antialiased;}
+a{color:inherit}
+
+/* NAV */
+.site-nav, .nav, header.site-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:#fff;box-shadow:0 6px 20px rgba(16,24,40,0.04);position:sticky;top:0;z-index:40}
+.site-nav .logo{font-weight:700}
+.site-nav nav a{margin-left:18px;text-decoration:none;color:#111;font-weight:600;opacity:.9;transition:opacity .18s}
+.site-nav nav a:hover{opacity:1;color:var(--cta)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 520px;gap:28px;align-items:center;padding:60px 28px;max-width:1200px;margin:28px auto}
+.hero-left h1{font-size:clamp(30px,5vw,56px);margin:0 0 12px}
+.hero-left .lead{color:var(--muted);margin-bottom:18px}
+.hero-cta .btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--cta);color:white;text-decoration:none;font-weight:700;margin-right:12px;box-shadow:0 8px 30px rgba(255,59,59,0.12);transition:transform .12s}
+.hero-cta .btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(17,17,17,0.06)}
+.hero-cta .btn:hover{transform:translateY(-3px)}
+
+/* hero right */
+.hero-right{position:relative;background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02));border-radius:15px;padding:18px;display:flex;align-items:center;justify-content:center;min-height:360px}
+.hero-right img{max-width:100%;border-radius:12px;box-shadow:0 12px 40px rgba(16,24,40,0.12);transform:translateY(0);transition:transform .45s}
+.hero-right:hover img{transform:translateY(-6px)}
+
+/* features */
+.features{display:flex;gap:18px;max-width:1100px;margin:30px auto;padding:0 20px}
+.feature{background:#fff;padding:22px;border-radius:12px;flex:1;box-shadow:0 8px 30px rgba(16,24,40,0.04);transition:transform .18s}
+.feature:hover{transform:translateY(-6px)}
+.feature .icon{font-size:26px;margin-bottom:8px}
+
+/* teaser grid */
+.grid-teaser{max-width:1200px;margin:36px auto;padding:0 20px}
+.teaser-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{display:block;background:white;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 10px 30px rgba(16,24,40,0.06);transition:transform .18s}
+.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card-body{padding:12px}
+.price{font-weight:800}
+.old{color:var(--muted);text-decoration:line-through;margin-left:8px;font-weight:700}
+
+/* shop page */
+.shop-main{max-width:1200px;margin:18px auto;padding:0 20px}
+.store-hero.small{background:linear-gradient(90deg, #111, #222);color:#fff;padding:36px;border-radius:12px;text-align:center;margin-bottom:18px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.product-card{background:#fff;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 10px 30px rgba(16,24,40,0.06);transition:transform .18s;display:block}
+.product-card img{width:100%;height:220px;object-fit:cover;display:block}
+.product-card h3{padding:12px 16px;margin:0;font-size:1.05rem}
+.product-card .meta{padding:0 16px 16px;color:var(--muted);font-weight:700}
+
+/* product page */
+.product-page{display:grid;grid-template-columns:520px 1fr;gap:28px;max-width:1100px;margin:32px auto;padding:0 20px;align-items:start}
+.product-visual img{width:100%;border-radius:12px;box-shadow:0 10px 40px rgba(16,24,40,0.08)}
+.product-info{background:#fff;padding:24px;border-radius:12px;box-shadow:0 10px 30px rgba(16,24,40,0.06)}
+.price-block{display:flex;align-items:center;gap:12px;margin:12px 0}
+.price-block .price{font-size:1.4rem;font-weight:800}
+.price-block .old{text-decoration:line-through;color:var(--muted);font-weight:700}
+
+/* form/settings */
+.size-row{margin-top:12px}
+.size-row select{padding:8px;border-radius:8px;border:1px solid #eee}
+
+/* checkout/thankyou */
+.checkout,.thankyou{max-width:720px;margin:40px auto;padding:0 20px}
+.cart-contents ul{list-style:none;padding-left:0}
+.cart-total{font-weight:800;margin-top:12px}
+
+/* footer */
+.site-footer{background:#111;color:#fff;padding:20px;text-align:center;margin-top:48px;border-top:1px solid rgba(255,255,255,0.02)}
+
+/* responsive */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:18px;padding:28px}
+  .product-page{grid-template-columns:1fr; padding:0 16px}
+  .hero-right{min-height:240px}
+}
