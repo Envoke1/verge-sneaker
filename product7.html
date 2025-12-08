@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Verge Trail — Verge Sneaker</title>
+<link rel="stylesheet" href="styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XQSQ27LW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-T3XQSQ27LW');</script>
+<script src="https://unpkg.com/lottie-web@5.10.1/build/player/lottie.min.js"></script>
+</head>
+<body>
+<header class="site-nav">
+  <div class="logo">Verge Sneaker</div>
+  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="checkout.html">Checkout</a></nav>
+</header>
+
+<main class="product-page">
+  <div class="product-visual">
+    <div class="lottie" data-path="https://assets9.lottiefiles.com/packages/lf20_0yfsb3a1.json" style="width:100%;max-width:520px;margin:auto"></div>
+    <img src="https://images.pexels.com/photos/2529150/pexels-photo-2529150.jpeg" alt="Verge Trail">
+  </div>
+
+  <div class="product-info">
+    <h1>Verge Trail</h1>
+    <p class="byline">Trail ready with rugged grip</p>
+
+    <div class="price-block">
+      <div class="price">R 1 499</div>
+      <div class="old">R 1 999</div>
+    </div>
+
+    <div class="size-row">
+      <label>Size</label>
+      <select id="size7"><option>7</option><option>8</option><option>9</option><option>10</option></select>
+    </div>
+
+    <div style="margin-top:20px;">
+      <button class="btn" id="addToCart7">Add to cart</button>
+      <button class="btn ghost" onclick="location.href='checkout.html'">Buy now</button>
+    </div>
+
+    <p class="desc">Aggressive tread and durable upper for off-road days.</p>
+  </div>
+</main>
+
+<script>
+document.querySelectorAll('.lottie').forEach(function(el){
+  var path = el.getAttribute('data-path');
+  if(path && window.lottie) lottie.loadAnimation({container:el,renderer:'svg',loop:true,autoplay:true,path:path});
+});
+const product7 = {id:'verge-trail-007',name:'Verge Trail',price:1499};
+document.getElementById('addToCart7').addEventListener('click', function(){
+  let cart = JSON.parse(localStorage.getItem('verge_cart')||'[]');
+  cart.push(product7);
+  localStorage.setItem('verge_cart', JSON.stringify(cart));
+  if(window.gtag) gtag('event','add_to_cart',{currency:'ZAR',value:product7.price,items:[{item_id:product7.id,item_name:product7.name,quantity:1}]});
+  alert('Added Verge Trail to cart');
+});
+</script>
+</body>
+</html>
