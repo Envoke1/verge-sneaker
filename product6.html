@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Verge Max — Verge Sneaker</title>
+<link rel="stylesheet" href="styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XQSQ27LW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-T3XQSQ27LW');</script>
+<script src="https://unpkg.com/lottie-web@5.10.1/build/player/lottie.min.js"></script>
+</head>
+<body>
+<header class="site-nav">
+  <div class="logo">Verge Sneaker</div>
+  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="checkout.html">Checkout</a></nav>
+</header>
+
+<main class="product-page">
+  <div class="product-visual">
+    <div class="lottie" data-path="https://assets6.lottiefiles.com/packages/lf20_0yfsb3a1.json" style="width:100%;max-width:520px;margin:auto"></div>
+    <img src="https://images.pexels.com/photos/19091/pexels-photo.jpg" alt="Verge Max">
+  </div>
+
+  <div class="product-info">
+    <h1>Verge Max</h1>
+    <p class="byline">Max cushioning for long days</p>
+
+    <div class="price-block">
+      <div class="price">R 1 899</div>
+      <div class="old">R 2 499</div>
+    </div>
+
+    <div class="size-row">
+      <label>Size</label>
+      <select id="size6"><option>7</option><option>8</option><option>9</option><option>10</option></select>
+    </div>
+
+    <div style="margin-top:20px;">
+      <button class="btn" id="addToCart6">Add to cart</button>
+      <button class="btn ghost" onclick="location.href='checkout.html'">Buy now</button>
+    </div>
+
+    <p class="desc">Maximum cushioning and long-term comfort for heavy use.</p>
+  </div>
+</main>
+
+<script>
+document.querySelectorAll('.lottie').forEach(function(el){
+  var path = el.getAttribute('data-path');
+  if(path && window.lottie) lottie.loadAnimation({container:el,renderer:'svg',loop:true,autoplay:true,path:path});
+});
+const product6 = {id:'verge-max-006',name:'Verge Max',price:1899};
+document.getElementById('addToCart6').addEventListener('click', function(){
+  let cart = JSON.parse(localStorage.getItem('verge_cart')||'[]');
+  cart.push(product6);
+  localStorage.setItem('verge_cart', JSON.stringify(cart));
+  if(window.gtag) gtag('event','add_to_cart',{currency:'ZAR',value:product6.price,items:[{item_id:product6.id,item_name:product6.name,quantity:1}]});
+  alert('Added Verge Max to cart');
+});
+</script>
+</body>
+</html>
