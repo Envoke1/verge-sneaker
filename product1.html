@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Verge Core — Verge Sneaker</title>
+<link rel="stylesheet" href="styles.css">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XQSQ27LW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-T3XQSQ27LW');</script>
+<!-- lottie player -->
+<script src="https://unpkg.com/lottie-web@5.10.1/build/player/lottie.min.js"></script>
+</head>
+<body>
+<header class="site-nav">
+  <div class="logo">Verge Sneaker</div>
+  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="checkout.html">Checkout</a></nav>
+</header>
+
+<main class="product-page">
+  <div class="product-visual">
+    <div class="lottie" data-path="https://assets7.lottiefiles.com/packages/lf20_jbrw3hcz.json" style="width:100%;max-width:520px;margin:auto"></div>
+    <img src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg" alt="Verge Core">
+  </div>
+
+  <div class="product-info">
+    <h1>Verge Core</h1>
+    <p class="byline">Core edition — balanced performance</p>
+
+    <div class="price-block">
+      <div class="price">R 1 399</div>
+      <div class="old">R 1 999</div>
+    </div>
+
+    <div class="size-row">
+      <label>Size</label>
+      <select id="size1">
+        <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option>
+      </select>
+    </div>
+
+    <div style="margin-top:20px;">
+      <button class="btn" id="addToCart1">Add to cart</button>
+      <button class="btn ghost" onclick="location.href='checkout.html'">Buy now</button>
+    </div>
+
+    <p class="desc">Lightweight cushioning and breathable upper for all day comfort.</p>
+  </div>
+</main>
+
+<script>
+// load lottie if available
+document.querySelectorAll('.lottie').forEach(function(el){
+  var path = el.getAttribute('data-path');
+  if(path && window.lottie) lottie.loadAnimation({container:el,renderer:'svg',loop:true,autoplay:true,path:path});
+});
+
+// product data
+const product1 = {id:'verge-core-001',name:'Verge Core',price:1399};
+document.getElementById('addToCart1').addEventListener('click', function(){
+  let cart = JSON.parse(localStorage.getItem('verge_cart')||'[]');
+  cart.push(product1);
+  localStorage.setItem('verge_cart', JSON.stringify(cart));
+  if(window.gtag) gtag('event','add_to_cart',{currency:'ZAR',value:product1.price,items:[{item_id:product1.id,item_name:product1.name,quantity:1}]});
+  alert('Added Verge Core to cart');
+});
+</script>
+</body>
+</html>
