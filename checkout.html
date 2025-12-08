@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Checkout — Verge</title><link rel="stylesheet" href="styles.css">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XQSQ27LW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-T3XQSQ27LW');</script>
+</head>
+<body>
+<header class="site-nav"><div class="logo">Verge Sneaker</div><nav><a href="index.html">Home</a><a href="shop.html">Shop</a></nav></header>
+
+<main class="checkout">
+  <h1>Checkout</h1>
+  <div class="cart-contents" id="cartContents"></div>
+
+  <form id="checkoutForm">
+    <label>Full name<input name="name" required></label>
+    <label>Email<input name="email" type="email" required></label>
+    <label>Payment method
+      <select name="payment">
+        <option>Card</option><option>EFT</option>
+      </select>
+    </label>
+    <button class="btn" type="submit">Complete purchase</button>
+  </form>
+</main>
+
+<script>
+function renderCart(){
+  const el=document.getElementById('cartContents');
+  const cart=JSON.parse(localStorage.getItem('verge_cart')||'[]');
+  if(!cart.length){ el.innerHTML='<p>Your cart is empty. <a href="shop.html">Shop now</a></p>'; return;}
+  let total=0;
+  el.innerHTML = '<ul>'+cart.map((c,i)=>{ total+=c.price||0; return `<li>${c.name||c.item_name} — R ${c.price||c.value||0}</li>`; }).join('')+'</ul>';
+  el.innerHTML += `<p class="cart-total">Total R ${total}</p>`;
+}
+renderCart();
+
+document.getElementById('checkoutForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const cart=JSON.parse(localStorage.getItem('verge_cart')||'[]');
+  if(!cart.length){ alert('Cart empty'); return; }
+  const value = cart.reduce((s,i)=>s + (i.price||0),0);
+  // GA4 purchase event
+  if(window.gtag) gtag('event','purchase',{transaction_id:'txn_'+Date.now(),currency:'ZAR',value:value,items:cart.map(c=>({item_id:c.id,item_name:c.name,quantity:1}))});
+  localStorage.removeItem('verge_cart');
+  location.href='thankyou.html';
+});
+</script>
+</body>
+</html>
