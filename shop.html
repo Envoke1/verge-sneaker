@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Verge Sneaker – Drop</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3XQSQ27LW"></script>
+  <script>
+    window.dataLayer = window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','G-T3XQSQ27LW');
+  </script>
+  <!-- Lottie player -->
+  <script src="https://unpkg.com/lottie-web@5.10.1/build/player/lottie.min.js"></script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="logo">Verge Sneaker</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Verge Sneaker</h1>
+        <p class="lead">Launch drop — 30% off. Premium cushioning, urban design.</p>
+        <div class="hero-cta">
+          <a class="btn" href="shop.html" onclick="gtag && gtag('event','cta_click',{label:'hero_shop'});">Shop the drop</a>
+          <a class="btn ghost" href="#why" onclick="gtag && gtag('event','cta_click',{label:'hero_learn'});">Why Verge</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <!-- Lottie animation (replace data-path with a Lottie JSON if you want) -->
+        <div class="lottie" data-path=""></div>
+        <!-- fallback product image -->
+        <img src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg" alt="Verge Sneaker" />
+      </div>
+    </section>
+
+    <section id="why" class="features">
+      <div class="feature">
+        <div class="icon">🏃</div>
+        <h3>Lightweight comfort</h3>
+        <p>Engineered foam that keeps you moving all day.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🛡️</div>
+        <h3>Durable build</h3>
+        <p>Premium materials for long lasting wear.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">⚡</div>
+        <h3>Responsive feel</h3>
+        <p>Energy return with every step.</p>
+      </div>
+    </section>
+
+    <section class="grid-teaser">
+      <h2>Featured picks</h2>
+      <div class="teaser-grid">
+        <!-- three sample product cards link to product pages -->
+        <a class="card" href="product1.html">
+          <img src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg" alt="">
+          <div class="card-body">
+            <h4>Verge Core</h4>
+            <div class="price">R 1 399 <span class="old">R 1 999</span></div>
+          </div>
+        </a>
+        <a class="card" href="product2.html">
+          <img src="https://images.pexels.com/photos/19090/pexels-photo.jpg" alt="">
+          <div class="card-body">
+            <h4>Verge Runner</h4>
+            <div class="price">R 1 599 <span class="old">R 2 299</span></div>
+          </div>
+        </a>
+        <a class="card" href="product3.html">
+          <img src="https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg" alt="">
+          <div class="card-body">
+            <h4>Verge Street</h4>
+            <div class="price">R 1 299 <span class="old">R 1 799</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div>© 2025 Verge Sneaker Co</div>
+    <div class="footer-links"><a href="shop.html">Shop</a> · <a href="checkout.html">Checkout</a></div>
+  </footer>
+
+  <script>
+  // simple lottie loader: if data-path is present it will load animation
+  document.querySelectorAll('.lottie').forEach(function(el){
+    var path = el.getAttribute('data-path');
+    if(path && window.lottie){
+      lottie.loadAnimation({container:el, renderer:'svg', loop:true, autoplay:true, path:path});
+    }
+  });
+  </script>
+</body>
+</html>
